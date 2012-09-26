@@ -1,0 +1,472 @@
+body {
+	padding-bottom: 40px;
+    	background-color: #EFEFEF;}
+    	
+div.wordmark {
+	background-color: white;
+	border-bottom: 1px solid #ABABAB;
+	padding-top: 5px;}
+	
+div.wordmark img {height: 50px;}
+
+div.navigation {
+	padding: 16px 0px 0px 0px; 
+	color: #769C9F;}
+	
+div.navigation .offset1 {
+	margin-left: 135px; 
+	padding-top: 10px;}
+	
+div.navigation a, 
+div.navigation a:visited, 
+div.navigation a:active {
+	color: #769C9F; 
+	font-size: 14px;}
+	
+div.navigation h1 {
+	font-size: 24px; 
+	font-weight: normal; 
+	text-transform: uppercase}
+	
+div.navigation ul {margin-right: -35px;}
+
+div.navigation ul li {
+	display: inline; 
+	padding-top: 20px;}
+	
+div#login {margin-top: 10px;} 
+div#container {background-color: #EFEFEF;}
+
+div#container h1 {
+	font-size: 18px; 
+	color: #769C9F; 
+	margin-bottom: -10px;}
+	
+div#container h3 {
+	font-size: 14px; 
+	color: #477B7F; 
+	margin-bottom: 25px;}	
+div#container h4.msg.cert {color: #DA4F49; margin-top: 8px;}
+h4#cert_date {font-size: 18px; color: #477B7F;}
+div#container h1.cert_msg {margin-top: -75px; font-size: 16px;}
+div#container h1 span {padding: 2px;}
+div.inner-cont {
+	background-color: white; 
+	padding: 18px;}
+	
+div.iner-cont p, 
+div.inner-cont a { font-size: 14px;}
+
+div.inner-cont em {color: #777;}
+div.inner-cont em.note {float: right; text-align: right;}
+
+div#container .inner-cont h1 {
+	font-size: 24px; 
+	font-weight: normal; 
+	padding-left: 75px; 
+	margin-bottom: 5px;
+	color: #888;
+}
+
+div#container .inner-cont h1.citations {font-size: 21px; padding-left: 0px;}
+	
+.inner-cont a, 
+.inner-cont a:visited {color: #cb5101;}
+
+.inner-cont a:hover {color: #2C2F2F;}
+
+div.page-top {margin-bottom: 20px;}
+
+.inner-cont .btn-info {
+	background-color: #49afcd;
+	background-image: -ms-linear-gradient(top, #84c6cb, #51898d);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#84c6cb), to(#51898d));
+	background-image: -webkit-linear-gradient(top, #84c6cb, #51898d);
+	background-image: -o-linear-gradient(top, #84c6cb, #51898d);
+	background-image: -moz-linear-gradient(top, #84c6cb, #51898d);
+	background-image: linear-gradient(top, #84c6cb, #51898d);
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#84c6cb', endColorstr='#51898d', GradientType=0);}
+
+.btn-info:hover,
+.btn-info:active,
+.btn-info.active,
+.btn-info.disabled,
+.btn-info[disabled] {background-color: #51898d;}
+
+.btn-info:active,
+.btn-info.active {background-color: #51898d \9;}
+
+div#cert_statement .btn-info {margin-top: 6px; margin-left: 30px;}
+
+/* ------- headers ------------ */
+div.summary {
+	width: 235px; 
+	border: 1px solid #ccc; 
+	border-radius: 5px 5px 5px 5px; 
+	margin-top: 5px; 
+	background-color: #efefef;
+}
+
+div.summary p {
+	margin: 3px 0 15px 24px; 
+	font-size: 20px; 
+	color: #888;
+}
+
+div.summary ul li {list-style: none;}
+div.summary ul li.indent {list-style: circle inside; margin-left: 12px;}
+.inner-cont div.summary a.help_link {font-size: 13px; color: #333;} 
+.inner-cont div.summary a.update {font-size: 12px; color: #888; float: right; margin-right: 4px; margin-top: -9px;}
+form#certify {margin-bottom: 6px;}
+button.citation {margin-bottom: 6px;}
+div#container .inner-cont div#instructions h1 {padding-left: 25px;}
+div#instructions ul li {list-style: disc outside; margin-left: 0px;}
+div#instructions button.custom {margin-left: 25px;}
+/* -------------------- home page ---------------------- */  
+.inner-cont #home {
+	width: 600px;
+	margin: auto;
+	padding-top: 20px;}
+	.inner-cont #home span.span4 {margin-left: 0px;}
+div#container .inner-cont #home h1, div#container .inner-cont #help_page h1 {
+	font-size: 26px;
+	color: #477B7F;
+	font-weight: normal;
+	margin-top: -15px;
+	margin-bottom: 10px;
+	padding: 0;}
+	
+.inner-cont #home h2, .inner-cont #help_page h2 {
+	font-size: 22px;
+	color: #888888;
+	font-weight: normal;}
+	
+div#container .inner-cont #home h3, div#container .inner-cont #help_page h3 {
+	font-size: 20px;
+	font-weight: normal;
+	color: #769C9F;}
+
+.inner-cont #home a.btn {
+	padding: 8px 0px;
+	margin-top: 27px;
+	font-size: 19px;
+	color: white;}
+
+.inner-cont dl.dl-horizontal.home a {
+	color: #cb5101; 
+	font-size: 19px; 
+	font-weight: normal;}  
+	
+.inner-cont dl.dl-horizontal.home dd {
+	margin-bottom: 15px; 
+	font-size: 15px;}  
+	
+#lines dl.dl-horizontal.sections {width: 620px;}
+
+.inner-cont #home ul {
+	margin: 8px 110px 8px 60px;
+	font-size: 14px;}
+
+.inner-cont #home ul li {margin-bottom: 12px;}
+
+.inner-cont ul#totals {
+	margin-left: 15px;
+	list-style: none;}
+/* --------------- help page ---------------- */	
+.inner-cont #help_page {margin: 25px 100px; padding-top: 28px;}
+.inner-cont #help_page h2 {font-size: 20px;}
+.inner-cont #help_page a.btn {
+	font-size: 17px;
+	padding: 8px;
+	color: white;
+	margin-top: -14px;}
+#help_page span.span5 {margin-left: 0px;}
+ul#help {list-style: none; margin-left: 40px;}
+ul#help a {font-size: 16px;}
+ul#help > li {font-size: 15px; line-height: 22px;} 
+ul#help li a.open {color: #333;}
+ul#help li ul {
+	display: none;
+	line-height: 17px;
+	padding: 10px;}
+
+ul#help li ul li ul {display: block;}
+p#help, p#help a {font-size: 16px;}
+/* --------------- admin pages ---------------- */
+.admin.container-fluid {
+	background-color: #FCFCFC; 
+	padding: 10px;}
+	
+.admin .span3 .input-small {width: 80px;}
+.admin .span3 input {padding: 0px;}
+.admin .span3 {border-right: 1px solid #cccccc;}
+.admin .span3 ul li.active a {color: #2C2F2F;}
+
+.admin .span8.list {
+	-moz-column-count: 2;
+	-webkit-column-count: 2;
+	column-count: 2;} 
+	
+.admin .span8 h2 {margin-bottom: 12px;}
+.admin a, .admin a:visited {color: #477B7F;}
+.admin a:hover {color: #2C2F2F;}
+
+.admin .span8 a.btn-mini {color: white;}
+
+/* -------- file upload pages -------- */
+.inner-cont #tasks {margin: 0px 50px;}
+div#container .inner-cont #tasks h1 {padding-left: 0px;}
+div#container .inner-cont #tasks h1 + p {margin-left: 45px;}
+div#tasks form.span8 {padding-top: 16px;}
+div#tasks form.span8 p.span2 {margin-top: 12px;}
+div#tasks input.btn-info {font-size: 14px;}
+div#tasks dl.dl-horizontal dd {padding-left: 10px;}
+div#tasks div#uploaded_files {margin-top: -100px;}
+div#uploaded_files ul {margin-top: 6px;}
+div#uploaded_files li a.file_name {color: #333;}
+div#uploaded_files li a.delete {color: #888;}
+div#uploaded_files li a:hover {color: #cb5101;}
+div#file_upload {margin: 12px 25px;}
+div#container div.inner-cont #file_upload h1 {padding-left: 0px;}
+
+div.inner-controls#file-controls {
+	float: none; 
+	margin: 0px; 
+	padding: 0px;}
+
+div.file_inst {
+	background-color: #EEE; 
+	border-radius: 5px; 
+	-mox-border-radis: 5px; 
+	-webkit-border-radius: 5px;
+	padding: 6px 8px;}
+	
+div.file_inst div.controls {float: right;}
+
+div#file_upload a.btn-info {
+	color: white; 
+	margin-bottom: 20px;
+	margin-top: -40px;}
+
+textarea.cv {
+	border: 1px solid #999;
+	min-height: 25em;}
+/* --------------- footer --------------- */
+footer {
+	height: 60px; 
+	background-color: #769C9F; 
+	text-align: right;}
+	
+footer img {float: right; 
+	padding: 12px 10px 12px 0;}
+	
+footer p {color: white; 
+	float: right; 
+	padding: 10px 10px 0 0;}
+	
+footer a.footer, 
+footer a.footer:active, 
+footer a.footer:visited {
+	color: white; 
+	font-size: 14px;}
+	
+footer a.footer:hover {color: white;} 
+
+/* ---------- faculty pages navigation tabs ---------- */
+.nav {
+	margin-bottom: 1px; 
+	border: none;}
+
+.nav > li {
+	width: 190px; 
+	height: 24px; 
+	margin-right: 6px;
+	background: url("../img/tab_background.jpg") repeat-x;
+	-moz-border-top-right-radius: 5px;
+	-moz-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-top-left-radius: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;}
+    
+.nav > li > a:hover {
+	background: url("../img/tab_background.jpg") repeat-x; 
+	color: #555;}
+	
+.nav > li.active > a:hover {background: white;}
+.nav-tabs {border: none;}
+
+.nav-tabs > .active > a, 
+.nav-tabs > .active > a:hover {border: none;}
+
+.nav-tabs > li.active:hover {background-color: white;}
+.nav-tabs li.gap {margin-left: 225px;}
+
+.nav-tabs li a {
+      padding: 4px 0 2px 45px;
+      font-size: 16px;
+      color: #6a8d91;
+      border: none;}
+      
+.nav-tabs li a.active, 
+.nav-tabs li a.active:hover {
+	color: #555; 
+	padding-bottom: 0px;}
+ 
+/* ---------- sections ---------- */
+div.sec_head {
+	background:url("../img/arrow_closed.png") no-repeat scroll 6px 8px #eee;
+	border: 4px solid #e6e6e6;
+	border: 0px solid #ccc;
+	margin: 8px 0;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	padding: 6px 10px 6px 26px;
+}
+
+div.sec_head a {
+	color: #333;
+	font-weight: bold;
+	padding-left: 26px;
+	margin-left: -26px;
+}
+
+div.sec_head img {
+	margin-top: 0px;
+	margin-left: -23px;
+	margin-right: 6px;
+	border-top: 3px solid #eee;
+	float: left;}
+
+#lines ul#sections {
+	margin-left: 0px;
+	list-style: none;}	
+	
+#lines ul#sections li {
+	background-color: #eee;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	font-weight: bold;
+	margin: 8px 0px;
+	padding: 7px;}
+#lines ul#sections li a {color: #333;}
+#lines ul#sections li span.uncat {color: #888;}
+
+form#targetSecForm {
+	margin-top: 18px;
+	padding: 13px 0px 11px 11px;}
+	
+form#targetSecForm label {display: none;}
+#lines dl.sections dt.special {color: #cb5101;}
+ul#sec_instruct {
+	width: 450px;
+	float: right;
+	margin: -30px 40px -40px 0;
+}
+
+/* --------------- citation forms --------------- */
+.yellow {background-color: #FEFFBF;}
+form.yellow.span9 {padding: 4px 20px; margin-top: 11px;}
+div.inner-controls {
+	float: right; 
+	margin-top: -32px; 
+	padding-right: 20px;}
+	
+table.table a.edit_form_toggle {
+/*	float: right; 
+	color: #cb5101; */
+	font-size: 13px;
+	color: #333;
+}
+table.table th, table.table td {padding: 8px 4px 0px 6px;}
+button.btn-info a, 
+button.btn-info a:visited, 
+button.btn-info a:hover {
+	color: white; 
+	font-size: 17px; 
+	text-decoration: none;}
+
+input.btn-info {color: white; font-size: 18px;}	
+.btn.custom {color: #cb5101; font-size: 15px; margin-bottom: 8px;}
+.btn.custom.section {margin-left: 75px;}
+div#lines button.btn-info {color: white; font-size: 16px; width: 116px;}	
+div#lines a.toggle {text-decoration: none;} 
+div#lines a.btn-primary, 
+a.btn-primary:hover {
+	color: white; 
+	margin-left: 30px; 
+	font-size: 14px; 
+	padding: 4px 10px 4px;
+}
+
+a.peer .btn {padding: 6px 14px;}
+form.year_form input.btn-success {font-size: 12px; padding: 3px 7px;}
+	
+div#cert_statement {display: inline; padding: 10px 12px;}
+div#cert_statement h4 {color: #477B7F; margin-right: 18px;}
+div.cert_msg.span3 {margin-left: 75px;}
+div#optional_tag {float: right;}
+form label.small {
+	display: inline;
+	padding-left: 0px;
+	padding-right: 8px;
+	font-size: 14px;}
+
+form p.bottom {margin-bottom: 20px;}
+form.edit_form, form#edit_form {margin-bottom: 0px;}
+form.edit_form input.btn-success {margin-right: 12px;}
+form#edit_form input.btn-inverse {margin-top: -48px;}
+form.span10 {padding: 12px; margin-top: 12px;}
+form.span10 input.span1 {margin-right: 6px;}
+
+form.bulk_edit {padding: 5px 16px;}
+form.bulk_edit p.note {margin-top: -45px;}
+
+div.inner-controls a.sorton {color: #444;} 
+
+p#confirm {
+	display: none;
+	color: #cb5101;
+	font-size: 16px;
+}
+
+div.inner-cont a.help_link.in_form {color: #444;}
+div.inner-cont a.help_link.in_form:hover {color: #CB5101;}
+
+/* -- experimenting with checkboxes and forms -- */
+td.is_md {width: 50px;} 
+td.li_sec.year {width: 50px;}
+.inner-cont td.is_md a, .inner-cont td.is_md a:visited {color: #888; font-size: 12px;}
+div.inner-cont a.year_form_toggle {color: #333;}
+div.inner-cont em.year_placeholder {color: #999;}
+td.li_sec.citation span.creative_display {float: right; padding-top: 40px; color: #CCC;}
+
+/* --------------- needed? --------------- */ 
+th[scope="row"] {
+    color: #666;
+    text-align: right;
+    padding-right: 20px;
+    width: 110px;
+}
+dl.fix dt {min-height: 18px;}
+dl.fix dd {min-height: 18px;}
+ul.contact_sheet div.thumbnail {
+    height: 160px;
+    width: 158px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+ul.thumbnails li span.index {
+    float: left;
+    margin-right: -30px;
+    margin-left: 4px;
+    margin-top: 2px;
+    color: #bbb;
+    font-weight: bold;
+}
+ul.thumbnails li.highlight {background-color: #eee;}
+ul.thumbnails li.type div.thumbnail {border-color: #999;}
+span.inactive {color: #999;}

@@ -1,0 +1,85 @@
+{% extends "framework/bootstrap.tpl" %}
+
+{% block headlinks %}
+<link rel="service" href="{{ app_root }}/service">
+<link rel="alternate" type="application/json" href="{{ app_root }}/faculty/{{ fac.eid }}.json">
+<link rel="section_order" href="{{ app_root }}/faculty/{{ fac.eid }}/sections/order">
+<link rel="stylesheet" href="www/css/colorbox.css">
+{% endblock %}
+
+{% block main %}
+
+{% set check = "" %}
+
+<h1 class="fac">{{ fac.cn }} | {{ fac.eid }}</h1>
+<h3 class="fac">{{ fac.utexasedupersonorgunitname }}</h3>
+
+<ul class="nav nav-tabs">
+	<li><a href="faculty/{{ fac.eid }}/view">Citations</a></li>
+	<li class="active"><a href="faculty/{{ fac.eid }}/sections">Sections</a></li>
+	<li><a href="faculty/{{ fac.eid }}/upload">File Upload</a></li>
+</ul>
+
+<div class="inner-cont" id="lines">
+<h1>Manage your sections</h1>  
+    <div class="page-top">
+    <ul id="sec_instruct">     
+        <li>Click and drag to sort, click name to edit. Empty sections may be deleted.</li>
+        <li>Use sections to organize your citations.  There are no required sections; existing ones were taken from your CV.</li>
+        <li>The "uncategorized" section holds all unsorted citations. It will disappear when empty and cannot be edited.</li>
+   </ul>   
+          
+    </div><!-- page-top -->
+        <div class="row-fluid"><div class="span12">
+    	<a class="toggle" id="toggleSecForm" href="#"><button class="btn custom section">Add Section</button></a>
+    	</div></div>
+
+	<form id="targetSecForm" class="yellow form-inline hide" method="post" action="faculty/{{ fac.eid }}/sections">
+		<label>Section Name</label>
+		<input type="text" name="text"placeholder="Section name" class="span4">
+		<input type="submit" class="btn btn-success" value="add">
+		<input type="button" class="targetSecForm btn" value="cancel">
+	</form>
+
+	 
+    
+ 
+    <ul id="sections" class="sections">
+		{% for sec in fac.sections %}		
+		{% if none != sec.id %}
+		  <li id="{{ sec.id }}">
+		   
+		  	{% if sec.title == '[uncategorized]' %} 
+		  		<span class="sec-title uncat">
+		  		<span class="cross">✤</span>
+		  		{{ sec.title|slice(0, 75) }}
+		  		<span class="section_count">({{ sec.citations|length }})</span>
+		  		</span>
+		  	{% else %}
+		  	
+		  	<a href="#" class="section_edit">
+		  	<span class="sec-title">
+		  	<span class="cross">✤</span>
+		  	{{ sec.title|slice(0, 75) }}
+		  	<span class="section_count">({{ sec.citations|length }})</span>
+		  	</span>
+		  	</a>
+		  	{% endif %}
+		  
+		  <form class="hide" action="faculty/{{ fac.eid }}/section/{{ sec.id }}" method="post">
+			<input type="text" name="text" class="span4" value="{{ sec.title }}">
+			<input type="submit" class="btn btn-success" value="update">
+			  {% if 0 == sec.citations|length %} 
+			  <input type="button" class="delete btn btn-inverse" value="delete empty section">
+			  {% endif %}
+		  </form>
+		  </li>
+		  {% endif %}
+		{% endfor %}
+	</ul>
+
+	</div>
+<footer>{% block footer %}{{ parent() }}{% endblock footer %}</footer>
+</div>
+
+{% endblock main %}

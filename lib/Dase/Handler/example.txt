@@ -1,0 +1,23 @@
+OLD
+$file = $r->_files['uploaded_file'];
+if ($file && is_file($file['tmp_name'])) {
+		$name = $file['name'];
+		$path = $file['tmp_name'];
+		$type = $file['type'];
+		if (!is_uploaded_file($path)) {
+				$r->renderError(400,'no go upload');
+		}
+}
+
+
+NEW
+$file = $r->getFile('uploaded_file');
+$name = $file->getClientOriginalName();
+$path = $file->getPathName();
+$type  = $file->getMimeType();
+if (!is_uploaded_file($path)) {
+		$r->renderError(400,'no go upload');
+}
+if (!isset(Dase_File::$types_map[$type])) {
+		$r->renderError(415,'unsupported media type: '.$type);
+}

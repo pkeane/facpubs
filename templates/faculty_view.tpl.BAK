@@ -1,0 +1,228 @@
+{% extends "framework/bootstrap.tpl" %} 
+
+{% block headlinks %}
+<link rel="service" href="{{ app_root }}/service">
+<link rel="alternate" type="application/json" href="{{ app_root }}/faculty/{{ fac.eid  }}.json">
+<link rel="stylesheet" href="www/css/colorbox.css">
+<link rel="lines_order" href="{{ app_root }}/faculty/{{ fac.eid }}/lines/order">
+{% endblock %}
+
+{% block main %}
+
+<h1 class="fac">{{ fac.cn }}  | {{ fac.eid }}</h1>
+<h3 class="fac">{{ fac.utexasedupersonorgunitname }}</h3>
+<h1 class="cert_msg span4 offset7">record last certified: 
+	{% if fac.certified_citations %}<span class="yellow">{{ fac.certified_citations|date('m/d/Y') }}</span>
+	{% else %}(not yet certified)
+	{% endif %}</h1>
+
+<ul class="nav nav-tabs">
+	<li class="active"><a href="faculty/{{ fac.eid }}/view">Citations</a></li>
+	<li><a href="faculty/{{ fac.eid }}/sections">Sections</a></li>
+	<li><a href="faculty/{{ fac.eid }}/review">Certify</a></li>
+	<li class="gap"><a href="faculty/{{ fac.eid }}/assistance">Other tasks</a></li>
+</ul>
+
+<div class="inner-cont" id="lines">
+<h1>Edit and Review Citations</h1>
+  <div class="page-top row">
+    <div class="span12"><div class="row-fluid">
+        <dl class="dl-horizontal span8">
+            <dt>Add</dt>
+              <dd>Add single citations below, or use the <a href="faculty/{{ fac.eid }}/assistance">File Uploader</a> tool if you have a CV or other document with many citations.</dd>
+            <dt>Organize</dt>
+              <dd>Group citations into sections.  Existing sections have been taken from your CV if available; add sections and edit their names in the Sections tab.</dd>
+            <dt>Edit & tag</dt>
+              <dd>To edit all citations in a section, use the links in the section bar to add and remove tags, move to another section, or re-order the citations.</dd>
+            <dt>Review</dt>
+              <dd>When a citation is correct, click on the "done?" button to mark it as reviewed. All citations need to be marked as reviewed in order to certify the whole record.</dd>
+        </dl>
+
+        <div class="span4">
+	<h3>You currently have:</h3>
+	<ul id="totals">	
+	    <li>{{ fac.stats.total }} total citations</li>					
+	    <li>{{ fac.stats.reviewed }} marked as reviewed</li>
+	    <li>{{ fac.stats.is_peer }} tagged as peer reviewed</li>
+	    <li>{{ fac.stats.is_creative }} tagged as a creative work</li>
+	    <li><a href="faculty/{{ fac.eid }}/view">(update counts)</a></li> 
+	</ul>
+	</div>
+    </div><!-- row --></div><!-- span12 -->
+    
+    <!-- <button class="btn btn-info span2 offset1"> --><a href="#" class="toggle" id="toggleNewForm{{ sec.id }}"><button class="btn btn-info span2 offset1">Add a Citation</button></a><!-- </button> -->
+    	<div class="hide" id="targetNewForm{{ sec.id }}">
+		
+		<form class="yellow span10 offset1" action="faculty/{{ fac.eid }}/citations_form" method="post">
+		    <label for="text">citation text</label>
+		    <div id="lines"><textarea class="revision span9" name="text" rows="4"></textarea></div>
+			<p>
+			<label class="year small" for="year">year</label>
+			<input type="text" class="span1" name="year" value="">
+			<em class="note">4-digit year published. For pending works, leave blank or enter anticipated publishing date.</em>
+			</p>
+			
+			<p>
+			<label class="year small" for="section_header">section</label>
+			<select name="section_id" class="span5">
+				<option value="">select section header:</option>
+				{% for sh in fac.sections %}
+				<option {% if sec.title == sh.title %}selected{% endif %} value="{{ sh.id }}">{{ sh.title|slice(0,75) }}</option>
+				{% endfor %}
+			</select>
+			<em class="note">use sections to organize your citations<br />existing sections were taken from your CV</em>
+			</p>
+			<p>
+			<label class="small radio">peer reviewed</label>
+
+				<input type="radio" name="is_peer" value="1"> yes
+				<input type="radio" name="is_peer" value="0"> no 
+				<a href="help/peer_review" class="help_link"><img alt="?" src="www/img/help_link.png"></a>
+			</p>
+			
+			<p class="bottom">
+			<label class="small radio creative_work">creative work </label>
+				<input type="radio" name="is_creative" value="1"> yes
+				<input type="radio" name="is_creative" value="0"> no
+				<a href="help/creative_work" class="help_link nudge"><img alt="?" src="www/img/help_link.png"></a>
+				<em class="note">"creative work" usually applies to the performing and fine arts</em> 
+			</p>
+			<p class="buttons">
+				<input type="submit" class="btn btn-success" value="create citation">
+				<input class="targetNewForm{{ sec.id }} btn" type="button" value="cancel">
+			</p>
+				
+		</form>
+	</div> 
+  </div><!-- page-top -->
+
+  {% for sec in fac.sections %}
+  <div class="sec mod">
+	<div id="update_msg">
+	{% if sec.id == section_id %}
+	{% if msg %}<h3 class="msg">*{{ msg }}*</h3>{% endif %}
+	{% endif %}
+	</div>
+  <div class="sec_head" id="sec_head{{ sec.id }}">
+	<a href="{{ sec.id }}" class="section_header"><img src="www/img/arrow_open.png">{{ sec.title|slice(0,50) }}</a>
+	<span class="section_count">({{ sec.citations|length }})</span>
+  </div>
+  <div class="sec_body" id="sec_body{{ sec.id }}">
+
+	<div class="controls">
+		<div class="inner-controls">
+			<a href="#" class="toggle" id="toggleBulkForm{{ sec.id }}">tag citations</a> | 
+			<a href="#" class="toggle" id="toggleBulkForm2{{ sec.id }}">change sections</a> | 
+			<a href="sectionLines{{ sec.id }}" class="enable_sort">enable citaton re-ordering</a>
+		</div><!-- inner-controls -->
+
+		<div id="bulk_edit_options">
+			<div class="bulk_edit_form hide" id="targetBulkForm{{ sec.id }}">
+
+			<form action="faculty/{{ fac.eid }}/section/{{ sec.id }}/bulk" method="post" class="yellow bulk_edit">
+			{% if not sec.citations|length %} 
+				<p>no citations in this section!</p>   
+			{% else %}
+				<h3>Tag all citations in section "{{ sec.title }}":</h3>
+				
+				<p>
+				<label class="small radio peer_reviewed" for="all_peer">peer reviewed</label>
+				<input type="radio" name="all_peer" value="1"> yes 
+				<input type="radio" name="all_peer" value="0"> no 
+				<input type="radio" name="all_peer" value="2" checked> (no change) 
+				<a href="help/peer_review" class="help_link"><img alt="?" src="www/img/help_link.png"></a>
+				</p><p>				
+				<label class="small radio creative_work" for="all_creative">creative work</label>
+				<input type="radio" name="all_creative" value="1"> yes
+				<input type="radio" name="all_creative" value="0"> no
+				<input type="radio" name="all_creative" value="2" checked> (no change) 	
+				<a href="help/creative_work" class="help_link nudge"><img alt="?" src="www/img/help_link.png"></a>
+				</p>
+				<p>
+				<input class="btn btn-success" type="submit" value="apply changes">
+				<input class="targetBulkForm{{ sec.id }} btn" type="button" value="cancel">
+				<em class="note">Note: individual citations can be tagged using the citation's edit button.</em>
+				</p>					
+			{% endif %}			
+			</form>
+			</div><!-- #targetBulkForm{{ sec.id }} -->
+			<div class="bulk_edit_form hide sec_form" id="targetBulkForm2{{ sec.id }}">
+
+			<form action="faculty/{{ fac.eid }}/section/{{ sec.id }}/mover" class="yellow bulk_edit" method="post">
+			{% if not sec.citations|length %} 
+				<p>no citations in this section!</p>   
+			{% else %}
+				<label for="all_peer"><h3>Move all citations from section "{{ sec.title|slice(0,65) }}" to:</h3></label>
+				<select name="section_id">
+				<option value="">select section header:</option>
+				{% for sh in fac.sections %}
+					<option {% if sec.title ==  sh.title %}selected{% endif %} value="{{ sh.id }}">{{ sh.title|slice(0,60) }}</option>
+				{% endfor %}
+				</select>
+				<p>
+				<input class="btn btn-success" type="submit" value="move citations">
+				<input class="targetBulkForm2{{ sec.id }} btn" type="button" value="cancel">
+				<em class="note">Note: individul citations can be moved to another section using the citation's edit button.</em>
+				</p>
+				
+			{% endif %}	
+			</form>
+			</div><!-- #targetBulkForm2{{ sec.id }} -->
+		</div><!-- bulk_edit_options -->			
+	</div><!-- controls -->
+
+	<table class="table table-bordered"  id="sectionLines{{ sec.id }}">
+
+	{% for line in sec.citations %}
+		<a name="line{{ line.id }}"></a>
+		<tr class="section_row" id="{{ line.id }}">
+			<td class="li_sec review">
+			{% if not line.reviewed %}
+				<p>
+				<a class="review" href="faculty/{{ fac.eid }}/citation/{{ line.id }}/review_flag/on"><button class="review btn btn-danger"><input type="checkbox"> done?</button></a>
+				<a class="review hide" href="faculty/{{ fac.eid }}/citation/{{ line.id }}/review_flag/off"><button class="reviewed btn"><input type="checkbox" checked="yes">reviewed</button></a>
+				</p>
+			{% else %}
+				<p>
+				<a class="review" href="faculty/{{ fac.eid }}/citation/{{ line.id }}/review_flag/off"><button class="reviewed btn"><input type="checkbox" checked="yes">reviewed</button></a>
+				<a class="review hide" href="faculty/{{ fac.eid }}/citation/{{ line.id }}/review_flag/on"><button class="review btn btn-danger"><input type="checkbox">done?</button></a>
+				</p>
+			{% endif %}
+			</td>
+
+			<td class="li_sec year">{{ line.year }}</td>
+
+			<td class="li_sec citation">
+				<span class="line">{{ line.revised_text }}</span>
+				<a href="faculty/{{ fac.eid }}/citation/{{ line.id }}/form" class="edit_form_toggle" id="toggleLine{{ line.id }}">edit</a>
+				<div class="hide revision_form" id="targetLine{{ line.id }}">
+				</div>
+			</td>
+
+			<td class="is_peer">
+				{% if line.is_peer %}
+					peer-reviewed
+				{% else %}
+				{% endif %}
+
+				{% if line.is_creative %}
+					<em class="cw_table">creative work</em>
+				{% else %}
+				{% endif %}
+			</td>
+
+		</tr>
+	{% endfor %}
+	</table>
+
+  </div>
+  </div> 
+  {% endfor %}
+</div>
+
+<footer>{% block footer %}{{ parent() }}{% endblock footer %}</footer>
+
+{% endblock %}
+
+
+
