@@ -1,6 +1,8 @@
 # this file is here for projects that use the dase framework
 # and may have source managed w/ git
 
+inc/dev_to_prod_config.php
+inc/prod_config.php
 inc/local_config.php
 files/*
 
