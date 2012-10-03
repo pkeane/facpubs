@@ -43,16 +43,16 @@ Examples of <strong>creative activities</strong> to cite may include:
 			<li>Each citation should be a complete reference to a single work, independent of other citations or section labels.</li>
 			<li>Include citations to reprints within the original citation where appropriate.</li> 
 			<li>Omit citations to unpublished activities such as presentations and lectures.</li>
-			<li>Group citations using section labels.  These provide a visual convenience rather than machine-readable citation types.
+			<li>Group citations using section labels as a visual convenience. Section labels are not machine-readable citation types.
 		</ul>
 		</li>
 
 		<li>
 		<a href="#0.1_">What counts as <strong>peer reviewed</strong>?</a>
 		<ul>
-			<li>Use the <strong>peer reviewed</strong> flag to indicate works published in or accepted to a peer-reviewed or refereed journal or venue as understood in your discipline or field.
+			<li>Use the <strong>peer reviewed</strong> ('peer-rev') flag to indicate works published in or accepted to a peer-reviewed or refereed journal or venue as understood in your discipline or field.
 			</li>
-			<li class="ital">Note that, while seeding your digital publication record, staff marked as peer reviewed only those citations explicitly labeled 'peer reviewed' or 'refereed' in your CV or publications list.
+			<li class="ital">Note: while seeding your digital publication record, staff marked as peer reviewed only those citations explicitly labeled 'peer reviewed' or 'refereed' in your CV or publications list.
 			</li>
 		</ul>
 		</li>

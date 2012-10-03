@@ -14,12 +14,12 @@
 	</p>
 
 	<p class="bottom">		
-	<label class="small radio creative_work"><a href="help/creative_work" class="help_link in_form">creative work? </a></label>
+	<label class="small radio creative_work"><a href="help/creative_work" class="help_link in_form">creative work </a></label>
 	{% if citation.is_creative %}
-		<input type="radio" name="is_creative" value="1" checked="checked"> yes
+		<input type="radio" name="is_creative" value="1" checked="checked"> yes &nbsp;&nbsp;
 		<input type="radio" name="is_creative" value="0"> no	
 	{% else %}
-		<input type="radio" name="is_creative" value="1"> yes
+		<input type="radio" name="is_creative" value="1"> yes &nbsp;&nbsp;
 		<input type="radio" name="is_creative" value="0" checked="checked"> no
 	{% endif %}
 	<em class="note">"creative work" usually applies to the performing and fine arts</em>  

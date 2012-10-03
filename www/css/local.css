@@ -411,7 +411,7 @@ div#optional_tag {float: right;}
 form label.small {
 	display: inline;
 	padding-left: 0px;
-	padding-right: 8px;
+	padding-right: 15px;
 	font-size: 14px;}
 
 form p.bottom {margin-bottom: 20px;}
@@ -441,7 +441,10 @@ td.li_sec.year {width: 50px;}
 .inner-cont td.is_md a, .inner-cont td.is_md a:visited {color: #888; font-size: 12px;}
 div.inner-cont a.year_form_toggle {color: #333;}
 div.inner-cont em.year_placeholder {color: #999;}
-td.li_sec.citation span.creative_display {float: right; padding-top: 40px; color: #CCC;}
+td.li_sec.citation a.creative_display {
+	float: right; 
+	color: #CCC;
+}
 
 /* --------------- needed? --------------- */ 
 th[scope="row"] {

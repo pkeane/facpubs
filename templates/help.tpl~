@@ -20,23 +20,53 @@
 		<li>
 		<a href="#0.1_">Who adds citations to my record and where do they come from?</a>
 		<ul>
-			<li>You can review, edit, and add entries to your digital publication record as needed.</li>
+			<li>You can add, review, and edit entries in your digital publication record as needed.</li>
 			<li>To help you get started, UT staff seeded your digital record with citations gathered during spring 2011 from your public CV or other publications list.</li> 
-			<li>Since staff used multiple sources to seed your record, you may see some duplicate entries or other editorial issues.  Please review,  update, and add to your record as necessary.</li> 
+			<li>Since staff may have used multiple sources to seed your record, you may see some duplicate entries or other editorial issues.  Please review, correct, and  update your record as necessary.</li> 
+		</ul>
+		</li>
+		
+		<li>
+		<a href="#0.1_">What <strong>types of citations</strong> belong in the Publications Manager?</a>
+		<ul>
+			<li>Cite all significant publications and other creative activities where appropriate.  Cite also works submitted for publication, but not works in progress, papers read before learned societies, invited papers, or lectures of a scholarly nature.<br/><br/> Examples of <strong>publications</strong> to cite may include:
+			<ul>
+				<li>Books, articles, reports, published conference proceedings</li> 
+				<li>Chapters and other contributions, reviews, translations, edited works</li>	
+			</ul>
+Examples of <strong>creative activities</strong> to cite may include:
+			<ul>
+				<li>Software and instructional technologies, recordings, broadcasts </li>
+				<li>Exhibitions, curatorships, screenings, installations, architectural designs</li>
+			</ul>
+			</li>
+			<li>Each citation should be a complete reference to a single work, independent of other citations or section labels.</li>
+			<li>Include citations to reprints within the original citation where appropriate.</li> 
+			<li>Omit citations to unpublished activities such as presentations and lectures.</li>
+			<li>Group citations using section labels.  These provide a visual convenience rather than machine-readable citation types.
 		</ul>
 		</li>
 
+		<li>
+		<a href="#0.1_">What counts as <strong>peer reviewed</strong>?</a>
+		<ul>
+			<li>Use the <strong>peer reviewed</strong> flag to indicate works published in or accepted to a peer-reviewed or refereed journal or venue as understood in your discipline or field.
+			</li>
+			<li class="ital">Note that, while seeding your digital publication record, staff marked as peer reviewed only those citations explicitly labeled 'peer reviewed' or 'refereed' in your CV or publications list.
+			</li>
+		</ul>
+		</li>
 
 		<li>
-		<a href="#0.1_">What items should I mark as <strong>creative works</strong>?</a>
+		<a href="#0.1_">What items should I mark as <strong>creative work</strong>?</a>
 		<ul>
-			<li>Use 'creative work' to designate <strong>activities</strong> such as performances and screenings - commonest in the Performing and Fine Arts or Communication - or <strong>instructional technologies</strong> like web sites. <br />
+			<li>Use 'creative work' to tag entries that describe non-publication-oriented <strong>creative activities</strong> such as performances, screenings, or applications of technologies like those common in academic units in performing and fine arts and communications. Use 'creative work' to tag non-publication entries that describe <strong>activities</strong> such as performances and screenings or <strong>instructional technologies</strong> like web sites. Performing and Fine Arts or Communication.<br />
 			    <strong>Examples include:</strong>
 			<ul>
 				<li>A screenplay, musical score, or architectural design</li>
 				<li>A dance performance, art exhibition, or film screening</li>
 				<li>A TV or radio broadcast, or internet podcast  </li>
-				<li>Software, web sites, or other instructional materials</li>
+				<li>Software, web sites, or instructional materials</li>
 			</ul>
 			</li>
 			<li>The creative work designation may be used administratively to 
@@ -44,32 +74,6 @@
 			    citations into the digital Faculty Activity Report.
 
 			</li>
-		</ul>
-		</li>
-		
-		<li>
-		<a href="#0.1_">What counts as <strong>peer reviewed</strong>?</a>
-		<ul>
-			<li>The <strong>peer reviewed</strong> flag is generally used to indicate that a work has been published in or accepted to a peer-reviewed or refereed journal or venue. Peer review represents various meanings and implications depending on discipline, venue, and the nature of the publication. Please use the definitions customary to your discipline or field.
-			</li>
-			<li class="ital">Please note: When importing your citations from CVs and other publication lists, our staff marked citations as peer reviewed only where explicitly indicated. Please correct any ommissions or errors if needed.
-			</li>
-		</ul>
-		</li>
-		
-		<li>
-		<a href="#0.1_">What <strong>types of citations</strong> belong in the Pubs Manager?</a>
-		<ul>
-			<li>Include all citations of scholarly works that have been published, presented, or otherwise produced, and of works that are in the process of becoming published. This includes such categories as:
-			<ul>
-				<li>- Books, articles, reports, published conference proceedings</li> 
-				<li>- Chapters and other contributions, reviews, translations, edited works, curatorship</li>	
-				<li>- Software and instructional technology, recordings, broadcasts </li>
-				<li>- Exhibitions, screenings, installations, architectural designs</li>
-			</ul>
-			</li>
-			<li>Make sure each citation is a complete and independent reference. Other applications that may use your citation iformation won't necessarily reference section headers or other citations.</li>
-			<li>Do not include references to unpublished activities such as presentations and lectures, or references to standing positions, such as magazine editorship. Citations of reprints should be included within the original citation if needed.</li> 
 		</ul>
 		</li>
 		

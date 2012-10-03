@@ -67,7 +67,7 @@
         </li> 
         <li><strong>{{ fac.stats.total }}</strong> citations</li>
         <li class="indent">{{ fac.stats.is_peer }} <a href="help/peer_review" class="help_link">peer-reviewed</a></li> 
-        <li class="indent">{{ fac.stats.is_creative }} <a href="help/creative_work" class="help_link">creative works</a></li>
+        <li class="indent">{{ fac.stats.is_creative }} <a href="help/creative_work" class="help_link">creative works <em>CW</em></a></li>
         <li><a class="update" href="faculty/{{ fac.eid }}/view">(update)</a>
         </li>
         </ul>
@@ -150,17 +150,17 @@
 				<h3>Tag all citations in section "{{ sec.title }}":</h3>
 				
 				<p>
-				<label class="small radio peer_reviewed" for="all_peer">peer reviewed</label>
-				<input type="radio" name="all_peer" value="1"> yes 
-				<input type="radio" name="all_peer" value="0"> no 
+				<label class="small radio peer_reviewed" for="all_peer"><a href="help/peer_review" class="help_link in_form">peer reviewed</a></label>
+				<input type="radio" name="all_peer" value="1"> yes &nbsp;&nbsp;&nbsp;
+				<input type="radio" name="all_peer" value="0"> no &nbsp;&nbsp;&nbsp;
 				<input type="radio" name="all_peer" value="2" checked> (no change) 
-				<a href="help/peer_review" class="help_link"><img alt="?" src="www/img/help_link.png"></a>
+				
 				</p><p>				
-				<label class="small radio creative_work" for="all_creative">creative work</label>
-				<input type="radio" name="all_creative" value="1"> yes
-				<input type="radio" name="all_creative" value="0"> no
+				<label class="small radio creative_work" for="all_creative"><a href="help/creative_work" class="help_link in_form">creative work</a></label>
+				<input type="radio" name="all_creative" value="1"> yes &nbsp;&nbsp;&nbsp;
+				<input type="radio" name="all_creative" value="0"> no &nbsp;&nbsp;&nbsp;
 				<input type="radio" name="all_creative" value="2" checked> (no change) 	
-				<a href="help/creative_work" class="help_link nudge"><img alt="?" src="www/img/help_link.png"></a>
+				
 				</p>
 				<p>
 				<input class="btn btn-success" type="submit" value="apply changes">
@@ -222,13 +222,16 @@
 			
 			<td class="li_sec citation">
 				<span class="line">
-				  <a href="faculty/{{ fac.eid }}/citation/{{ line.id }}/form" class="edit_form_toggle" id="toggleLine{{ line.id }}">
+
+				  {% if line.is_creative %}
+				  <a href="help/creative_work" class="creative_display help_link">CW</a>
+				  {% endif %}
+				
+				<a href="faculty/{{ fac.eid }}/citation/{{ line.id }}/form" class="edit_form_toggle" id="toggleLine{{ line.id }}">
 				    {{ line.revised_text }}
 				  </a>
 				  
-				  {% if line.is_creative %}
-				  <span class="creative_display">C!</span>
-				  {% endif %}
+
 				  
 				</span>		
 				<div class="hide revision_form" id="targetLine{{ line.id }}"></div>
