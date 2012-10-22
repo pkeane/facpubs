@@ -9,5 +9,8 @@ include('../inc/autoload.php');
 $config = new Dase_Config(BASE_PATH);
 $config->load('inc/config.php');
 $config->load('inc/local_config.php');
+define('LOG_DIR',$config->getLogDir());
+define('LOG_LEVEL',$config->getLogLevel());
+
 $db = new Dase_DB($config);
 

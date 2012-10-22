@@ -42,7 +42,7 @@
 
     
     <div class="span3">
-    <h1 class="citations">Ceritfy when done</h1>
+    <h1 class="citations">Certify when done</h1>
 
     <p>I ({{ fac.eid }}) certify that my record is current as of {{ "now"|date('m/d/Y') }}</p>
     

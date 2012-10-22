@@ -60,7 +60,7 @@ Examples of <strong>creative activities</strong> to cite may include:
 		<li>
 		<a href="#0.1_">What items should I mark as <strong>creative work</strong>?</a>
 		<ul>
-			<li>Use 'creative work' to tag entries that describe non-publication-oriented <strong>creative activities</strong> such as performances, screenings, or applications of technologies like those common in academic units in performing and fine arts and communications. Use 'creative work' to tag non-publication entries that describe <strong>activities</strong> such as performances and screenings or <strong>instructional technologies</strong> like web sites. Performing and Fine Arts or Communication.<br />
+			<li>Use 'creative work' to tag entries that describe non-publication-oriented <strong>creative activities</strong> such as performances, screenings, or applications of technologies like those common in academic units in performing and fine arts and communications.<br />
 			    <strong>Examples include:</strong>
 			<ul>
 				<li>A screenplay, musical score, or architectural design</li>

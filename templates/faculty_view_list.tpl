@@ -22,7 +22,7 @@
     <body>
 	<div id="container">
 		<div class="controls">
-		<a href="faculty/{{ fac.eid }}/assistance">&lt; back</a>
+		<a href="faculty/{{ fac.eid }}/upload">&lt; back</a>
 		</div>
 		
 	{% for sec in fac.sections %}

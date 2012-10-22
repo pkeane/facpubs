@@ -74,11 +74,9 @@
             {% block footer %}
 	    <a href="http://www.utexas.edu/cola/laits/"><img src="www/img/logo-copy.jpg" alt="LAITS"></a>
             <p>
-            <a href="mailto:facpubs@utlists.utexas.edu" class="footer">Contact Us</a> 
-            | 
-            <a href="#" class="footer">Logout</a><br />
+            <a href="mailto:facpubs@utlists.utexas.edu" class="footer">Contact Us</a><br />
             <a href="http://www.utexas.edu/policies/privacy/" class="footer">Privacy</a> 
-            | 
+            |
             <a href="http://www.utexas.edu/what-starts-here/web-guidelines/accessibility" class="footer">Web Accessibility</a>
             </p>
             {% endblock footer %}

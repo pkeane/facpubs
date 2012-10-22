@@ -23,7 +23,7 @@
 	<div class="controls">
 	  <a id="revert" href="file/{{ fac.eid }}/rawtext/{{ file.id }}/">revert to original text</a> |
 	  <a href="file/{{ fac.eid }}/file/{{ file.id }}">download original file</a> | 
-	  <a href="faculty/{{ fac.eid }}/assistance">return to my record</a>
+	  <a href="faculty/{{ fac.eid }}/upload">return to my record</a>
 	</div>
     </div>
 

@@ -47,7 +47,11 @@ class Dase_Handler_Faculty extends Dase_Handler
 	protected function setup($r)
 	{
 		if ('faculty_view_list' != $r->resource) {
-			$this->user = $r->getUser();
+				if ('citations' == $r->resource) {
+						$this->user = $r->getUser('http');
+				} else {
+						$this->user = $r->getUser();
+				}
 			if (!$this->user->is_admin && ($r->get('eid') != $this->user->eid)) {
 				$r->renderError(401,'unauthorized');
 			}
@@ -565,7 +569,7 @@ class Dase_Handler_Faculty extends Dase_Handler
 		$files->orderBy('uploaded DESC');
 		$r->assign('files',$files->findAll(1));
 		$r->assign('fac',$fac);
-		$r->renderTemplate('faculty_assistance.tpl');  // using this one instead of faculty_upload.tpl
+		$r->renderTemplate('faculty_assistance.tpl');  // using this one now instead of faculty_upload.tpl
 	}
 
 	public function postToFacultySections($r) 

@@ -32,9 +32,23 @@ class Dase_Handler_Upload extends Dase_Handler
 						$r->renderError(404,'no such eid');
 				}
 				$file = $r->getFile('uploaded_file');
+
+				if (null == $file) {
+						$r->renderError(400,'no file selected for uploading');
+				}
+
+
+
 				$name = $file->getClientOriginalName();
 				$path = $file->getPathName();
 				$type  = $file->getMimeType();
+
+				//fix for .docx which were being read as zip files
+				$docx_mime = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
+				if ('.docx' == substr($name,-5)) {
+						$type = $docx_mime;
+				}
+
 				if (!is_uploaded_file($path)) {
 					$r->renderError(400,'no go upload');
 				}

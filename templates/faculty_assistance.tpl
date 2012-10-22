@@ -27,10 +27,9 @@
 
 <div class="row-fluid"><div class="span12">
 	<div class="row-fluid">
-	    
 		  <form class="span8 offset1 yellow" id="upload_form" action="upload/{{ fac.eid }}" method="post" enctype="multipart/form-data">
 		    <p class="span4">
-		    <label for="uploaded_file">Please select a file (MS Word or PDF format)</label>
+		    <label for="uploaded_file">Please select a file ( WORD or PDF format)</label>
 		    <input class="input-file" type="file" name="uploaded_file" size="25"/>
 		    </p>
 

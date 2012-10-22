@@ -19,6 +19,7 @@ class Dase_Template {
             $this->assign('module_root', $request->module_root.'/');
         }
 
+				$this->assign('msg', $request->get('msg'));
         $this->assign('app_root', $request->app_root);
         $this->assign('request', $request);
         $this->assign('main_title', MAIN_TITLE);
